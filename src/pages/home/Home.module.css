@@ -1,0 +1,79 @@
+.container {
+    font-family: Arial, sans-serif;
+    background-color: #121a22;
+    color: #b0e0e6;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #b0e0e6;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #00ffcc;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLinks li a {
+    color: #b0e0e6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1a252f;
+  }
+  
+  .textContent {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .imageContainer img {
+    width: 400px;
+  }
+  
+  .button {
+    background-color: #071a24; /* Normal state background */
+    color: #74c8db; /* Text color */
+    border: 2px solid #74c8db; /* Border color */
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0c2a35; /* Slightly lighter than original */
+    border-color: #68b3c7; /* Slightly brighter border */
+    color: #68b3c7; /* Matching text color */
+  }
+  
+
+  .arrowIcon {
+    width: 20px;  /* Adjust size as needed */
+    height: auto;
+    margin-left: 8px;  /* Adds spacing between text and icon */
+    vertical-align: middle;
+  }
+  
