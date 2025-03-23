@@ -3,8 +3,12 @@ import Chatbot from "../../components/chatbot/Chatbot";
 function ConflictResolution() {
   return (
     <div>
-      <h1>ConflictResolution</h1>
-      <Chatbot />
+      <Chatbot
+        title="Conflict Resolution  Service Chat"
+        onSubmit={(prompt) => {
+          return "This is the response";
+        }}
+      />
     </div>
   );
 }

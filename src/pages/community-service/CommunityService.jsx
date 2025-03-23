@@ -3,8 +3,12 @@ import Chatbot from "../../components/chatbot/Chatbot";
 function CommunityService() {
   return (
     <div>
-      <h1>CommunityService</h1>
-      <Chatbot />
+      <Chatbot
+        title="Community Service Chat"
+        onSubmit={(prompt) => {
+          return "This is the response";
+        }}
+      />
     </div>
   );
 }
