@@ -1,0 +1,79 @@
+.feedbackContainer {
+    text-align: center;
+    padding: 40px;
+    color: #87c1b3;
+    background-color: #121a22;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 80px; /* Adjust this value to push it below the navbar */
+}
+
+
+.feedbackForm {
+    background-color: #1a252f;
+    padding: 50px 50px 50px 50px ;
+    border-radius: 30px;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+.question {
+    margin: 15px 0;
+    text-align: left;
+    color: #b0e0e6;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+label {
+    margin-right: 100px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.submitButton {
+    background-color: #187e79;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #0f5a57;
+}
+
+.thankYou {
+    font-size: 20px;
+    color: #b0e0e6;
+    font-weight: bold;
+}
