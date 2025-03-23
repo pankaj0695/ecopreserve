@@ -1,12 +1,14 @@
+import React from "react";
+import Navbar from "../../components/navbar/Navar";
 import Auth from "../../components/auth/Auth";
 
-function Signup() {
+const Signup = () => {
   return (
     <div>
-      <h1>Signup</h1>
-      <Auth />
+      <Navbar />
+      <Auth isLogin={false} />
     </div>
   );
-}
+};
 
 export default Signup;

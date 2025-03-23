@@ -1,12 +1,14 @@
+import React from "react";
+import Navbar from "../../components/navbar/Navar";
 import Auth from "../../components/auth/Auth";
 
-function Login() {
+const Login = () => {
   return (
     <div>
-      <h1>Login</h1>
-      <Auth />
+      <Navbar />
+      <Auth isLogin={true} />
     </div>
   );
-}
+};
 
 export default Login;
