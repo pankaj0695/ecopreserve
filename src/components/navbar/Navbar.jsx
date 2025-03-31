@@ -1,9 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "/ecopreserve-logo.png";
 import styles from "./Navbar.module.css";
+import { useUser } from "../../store/userContext";
 
 const Navbar = () => {
+  const { logout } = useUser();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    // navigate("/login");
+  };
   return (
     <nav className={styles.navbar}>
       <a href="/" className={styles["navbar-left"]}>
@@ -51,6 +58,9 @@ const Navbar = () => {
         >
           Feedback
         </NavLink>
+        <Link to="login" className={styles["nav-link"]} onClick={handleLogout}>
+          Logout
+        </Link>
       </div>
     </nav>
   );
