@@ -19,13 +19,39 @@ const Chatbot = ({ title = "Chatbot", onSubmit }) => {
 
     try {
       const response = await onSubmit(input);
-      setMessages([...newMessages, { type: "bot", text: response }]);
+      const formattedResponse = formatResponse(response);
+      setMessages([...newMessages, { type: "bot", text: formattedResponse }]);
     } catch (error) {
       setMessages([
         ...newMessages,
         { type: "bot", text: "Something went wrong!" },
       ]);
     }
+  };
+
+  const formatResponse = (response) => {
+    if (response.match(/\d+\.\s/)) {
+      const points = response.split(/\d+\.\s/).filter((point) => point.trim());
+      return (
+        <ul>
+          {points.map((point, index) => (
+            <li key={index}>{applyBoldFormatting(point.trim())}</li>
+          ))}
+        </ul>
+      );
+    }
+    return applyBoldFormatting(response);
+  };
+
+  const applyBoldFormatting = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/);
+    return parts.map((part, index) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <strong key={index}>{part.slice(2, -2)}</strong>
+      ) : (
+        part
+      )
+    );
   };
 
   return (
@@ -42,7 +68,13 @@ const Chatbot = ({ title = "Chatbot", onSubmit }) => {
             <div className={styles.icon}>
               {msg.type === "user" ? <FaUser /> : <FaRobot />}
             </div>
-            <div className={styles.message}>{msg.text}</div>
+            <div className={styles.message}>
+              {msg.type === "bot" && typeof msg.text === "object" ? (
+                msg.text
+              ) : (
+                <span>{msg.text}</span>
+              )}
+            </div>
           </div>
         ))}
       </div>

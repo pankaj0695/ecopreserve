@@ -29,9 +29,24 @@ function Feedback() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Feedback Submitted:", feedback);
+    const updatedFeedback = {
+      userEmail: user.email,
+      overallExperience: feedback.experience,
+      conflictResolution: feedback.conflict,
+      informationQuality: feedback.quality,
+      communityService: feedback.community,
+      suggestions: feedback.suggestions,
+      additionalComments: feedback.additional,
+    };
+    await fetch("http://localhost:3000/feedback/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedFeedback),
+    });
     setSubmitted(true);
 
     // Reset form after submission
